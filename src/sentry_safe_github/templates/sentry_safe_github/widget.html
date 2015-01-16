@@ -1,0 +1,15 @@
+{% load sentry_helpers %}
+<ul class="nav nav-list">
+  {% if not is_configured %}
+    <li>The This project doesn't have a github url set up.</li>
+  {% elif proj_url == None %}
+    <li>This project has an invalid github url set up.</li>
+  {% else %}
+    <li>
+      <a href="https://github.com/{{ proj_url }}/issues/new?title={{ title|urlencode }}&amp;body={{ desc|urlencode }}">
+        Create Github Issue
+      </a>
+    </li>
+    <li style="display: inline; margin-left: 20px">This widget doesn't know if one's already been created for this error.</li>
+  {% endif %}
+</ul>
