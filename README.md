@@ -14,8 +14,12 @@ TODO tag 0.1 and add @0.1 to url
 
 # Local Development
 
+```
 workon your-virtual-env # optional
 python setup.py develop
+```
+
+Then install & run sentry.
 
 
 # Licence
