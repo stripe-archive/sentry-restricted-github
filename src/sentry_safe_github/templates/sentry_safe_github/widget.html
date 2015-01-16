@@ -6,7 +6,7 @@
     <li>This project has an invalid github url set up.</li>
   {% else %}
     <li>
-      <a href="https://github.com/{{ proj_url }}/issues/new?title={{ title|urlencode }}&amp;body={{ desc|urlencode }}">
+      <a href="{{ proj_url }}/issues/new?title={{ title|urlencode }}&amp;body={{ desc|urlencode }}">
         Create Github Issue
       </a>
     </li>
