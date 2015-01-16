@@ -5,6 +5,7 @@ from django import forms
 from django.utils.translation import ugettext_lazy as _
 from sentry.plugins import Plugin
 from sentry.utils.http import absolute_uri
+from sentry.utils.safe import safe_execute
 
 import sentry_safe_github
 
@@ -37,7 +38,6 @@ class SafeGithubPlugin(Plugin):
         return bool(self.get_option('proj_url', project))
 
     def widget(self, request, group, **kwargs):
-        logger.info('Trying to render safe-github for %r', group)
         event = group.get_latest_event()
         return self.render('sentry_safe_github/widget.html', {
             'is_configured': self.is_configured(group.project),
@@ -47,9 +47,9 @@ class SafeGithubPlugin(Plugin):
         })
 
     def _get_group_body(self, request, group, event, **kwargs):
-        interface = event.interfaces.get('sentry.interfaces.Stacktrace')
+        interface = event.interfaces.get('exception')
         if interface:
-            return interface.to_string(event)
+            return safe_execute(interface.to_string, event)
         return
 
     def _get_group_description(self, request, group, event):
