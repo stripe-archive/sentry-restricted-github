@@ -47,7 +47,8 @@ class SafeGithubPlugin(Plugin):
         })
 
     def _get_group_body(self, request, group, event, **kwargs):
-        interface = event.interfaces.get('exception')
+        interface = (event.interfaces.get('exception') or
+                     event.interfaces.get('sentry.interfaces.Exception'))
         if interface:
             return safe_execute(interface.to_string, event)
         return
