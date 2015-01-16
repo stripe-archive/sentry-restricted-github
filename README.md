@@ -7,9 +7,7 @@ group.
 
 # Install
 
-`pip install -e git://github.com/stripe/sentry-safe-github.git#egg=sentry-safe-github`
-
-TODO tag 0.1 and add @0.1 to url
+`pip install -e git://github.com/stripe/sentry-safe-github.git@0.1#egg=sentry-safe-github`
 
 
 # Local Development
