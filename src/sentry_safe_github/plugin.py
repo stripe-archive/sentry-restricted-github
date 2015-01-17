@@ -24,7 +24,7 @@ class Form(forms.Form):
 class SafeGithubPlugin(Plugin):
     title = _('Safe Github')
     slug = 'safe_github'
-    description = "Tag sentry groups with the git blame for the code that threw the exception."
+    description = "Create Github tickets."
     version = sentry_safe_github.VERSION
 
     author = 'Stripe'
