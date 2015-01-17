@@ -1,7 +1,7 @@
 {% load sentry_helpers %}
 <ul class="nav nav-list">
   {% if not is_configured %}
-    <li>The This project doesn't have a github url set up.</li>
+    <li>This project doesn't have a github url set up.</li>
   {% elif proj_url == None %}
     <li>This project has an invalid github url set up.</li>
   {% else %}
