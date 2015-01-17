@@ -1,6 +1,6 @@
 # sentry-safe-github
 
-A limited alternavite to sentry-github which doesn't require write access to
+A limited alternative to sentry-github which doesn't require write access to
 repos. It allows creating tickets but doesn't link them to the sentry error
 group.
 
