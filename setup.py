@@ -25,7 +25,7 @@ setup(
     author='Daniel Benamy',
     author_email='dbenamy@stripe.com',
     url='https://github.com/stripe/sentry-restricted-github',
-    description='Create github tickets from sentry errors. More secure but less featureful than sentry-github.',
+    description='Create github tickets from sentry errors without giving sentry write access to the repo.',
     long_description=__doc__,
     license='MIT',
     package_dir={'': 'src'},
