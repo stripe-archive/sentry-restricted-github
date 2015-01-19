@@ -17,7 +17,7 @@ class Form(forms.Form):
     # TODO: validate repo
     proj_url = forms.CharField(
         label=_('Project URL'),
-        widget=forms.TextInput(attrs={'placeholder': 'e.g. github.com/stripe/sentry-safe-github'}),
+        widget=forms.TextInput(attrs={'placeholder': 'e.g. github.com/stripe/sentry-restricted-github'}),
         help_text=_('Enter your project url.'))
 
 
@@ -28,7 +28,7 @@ class SafeGithubPlugin(Plugin):
     version = sentry_safe_github.VERSION
 
     author = 'Stripe'
-    author_url = 'https://github.com/stripe/sentry-safe-github'
+    author_url = 'https://github.com/stripe/sentry-restricted-github'
 
     conf_title = title
     conf_key = 'safe_github'

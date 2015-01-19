@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-# sentry-safe-github
+# sentry-restricted-github
 
 A limited alternavite to sentry-github which doesn't require write access to
 repos. It allows creating tickets but doesn't link them to the sentry error
@@ -20,11 +20,11 @@ install_requires = [
 ]
 
 setup(
-    name='sentry-safe-github',
+    name='sentry-restricted-github',
     version='0.1',
     author='Daniel Benamy',
     author_email='dbenamy@stripe.com',
-    url='https://github.com/stripe/sentry-safe-github',
+    url='https://github.com/stripe/sentry-restricted-github',
     description='Create github tickets from sentry errors. More secure but less featureful than sentry-github.',
     long_description=__doc__,
     license='MIT',
