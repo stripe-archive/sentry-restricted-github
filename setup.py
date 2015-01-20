@@ -38,10 +38,10 @@ setup(
     include_package_data=True,
     entry_points={
        'sentry.apps': [
-            'safe_github = sentry_safe_github',
+            'restricted_github = sentry_restricted_github',
         ],
        'sentry.plugins': [
-            'safe_github = sentry_safe_github.plugin:SafeGithubPlugin',
+            'restricted_github = sentry_restricted_github.plugin:RestrictedGithubPlugin',
         ],
     },
     classifiers=[

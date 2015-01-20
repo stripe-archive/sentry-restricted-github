@@ -7,7 +7,7 @@ from sentry.plugins import Plugin
 from sentry.utils.http import absolute_uri
 from sentry.utils.safe import safe_execute
 
-import sentry_safe_github
+import sentry_restricted_github
 
 
 logger = logging.getLogger('sentry.plugin.' + __name__)
@@ -21,17 +21,17 @@ class Form(forms.Form):
         help_text=_('Enter your project url.'))
 
 
-class SafeGithubPlugin(Plugin):
-    title = _('Safe Github')
-    slug = 'safe_github'
+class RestrictedGithubPlugin(Plugin):
+    title = _('Restricted Github')
+    slug = 'restricted_github'
     description = "Create Github tickets."
-    version = sentry_safe_github.VERSION
+    version = sentry_restricted_github.VERSION
 
     author = 'Stripe'
     author_url = 'https://github.com/stripe/sentry-restricted-github'
 
     conf_title = title
-    conf_key = 'safe_github'
+    conf_key = 'restricted_github'
     project_conf_form = Form
 
     def is_configured(self, project, **kwargs):
@@ -39,7 +39,7 @@ class SafeGithubPlugin(Plugin):
 
     def widget(self, request, group, **kwargs):
         event = group.get_latest_event()
-        return self.render('sentry_safe_github/widget.html', {
+        return self.render('sentry_restricted_github/widget.html', {
             'is_configured': self.is_configured(group.project),
             'proj_url': self._get_github_url(group),
             'title': self._get_group_title(request, group, event),
