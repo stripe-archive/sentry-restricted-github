@@ -21,7 +21,7 @@ install_requires = [
 
 setup(
     name='sentry-restricted-github',
-    version='0.3',
+    version='0.4',
     author='Daniel Benamy',
     author_email='dbenamy@stripe.com',
     url='https://github.com/stripe/sentry-restricted-github',

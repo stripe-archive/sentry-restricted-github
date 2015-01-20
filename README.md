@@ -7,7 +7,7 @@ group.
 
 # Install
 
-`pip install -e git://github.com/stripe/sentry-restricted-github.git@0.3#egg=sentry-restricted-github`
+`pip install -e git://github.com/stripe/sentry-restricted-github.git@0.4#egg=sentry-restricted-github`
 
 
 # Local Development
